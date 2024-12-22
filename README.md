@@ -90,3 +90,15 @@ Process of automating, filling out and submitting the form
 --> Can do the above by "inspecting" elements in the webpage (right-click on any element such as username field and select the "Inspect Element" option from the menu).
 
 It will show the type of element, and also show all locators such as the field's id, class, placeholder, name.
+
+Final step is to confirm that the user is successfully added after signing up by writing an assertion.
+--> In order to use assertions, another Ruby library is needed since assertions are not something that is provided either natively in Ruby or by Selenium WebDriver.
+The Ruby library of RSpec will be used in this project which is a Behaviour-driven framework for Ruby and offers multiple libraries that can be used to work either together or independently.
+
+--> 2 different libraries will be used to add structure to the tests.
+
+1. RSpec Expectations library (https://rpsec.info/documentation/3.7rspec-expectations) - this library provides an API to express expected outcomes (by equivalence, by identity, by comparisons, by regexp, etc.)
+   --> To use RSpec, it first needs to be installed as a 'gem' (go to Ruby gems site for rspec: https://rubygems.org/gems/rspec/versions/3.7.0): copy the gem command to add to the GemFile
+   --> After adding the gem command to the GemFile, type $ bundle install - in the project directory path
+
+--> Use the rspec-core library - it provides a BDD format for test classes, as well as a test runner to execute test and provide nicely formatted output
