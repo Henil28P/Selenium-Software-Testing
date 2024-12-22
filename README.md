@@ -16,3 +16,55 @@ Installation for Ruby using rvm for Mac:
 3. $ rvm install 2.5.1 (or rvm install 3.2.0) to install the Ruby's latest stable version
 
 The sample/exampler website used for this project is: https://selenium-blog.herokuapp.com/signup
+
+1. Selenium WebDriver
+   The goal of Selenium WebDriver is to help developers and testers quickly and easily write automated tests. Its goal is to maintain a standardized API that is user-friendly and emulates user actions such as clicking and typing.
+
+Ideal users of WebDriver:
+--> Testers who want to save time manually testing.
+--> Developers have confidence in testing to know they won't introduce regressions.
+--> Those who have the need to test their applications across multiple browsers and platforms.
+--> A customizable and powerful framework (ie. WebDriver API)
+
+Selenium WebDriver works using Client-Server communication. When a Selenium test is executed, a new session of the browser driver is created and a browser is launched. For each command in the test script, a request is sent to the WebDriver API. The WebDriver API interprets the request and the step is then executed in the browser driver - which acts as a server - and just waits for the request to come in. Once each step is complete, the response is sent back to the WebDriver API and then back to the test. This process continues until all steps are complete.
+
+WebDriver works with all major supported tech stacks.
+--> The languages supported are C, Java, Ruby, Python, JavaScript
+--> The platforms supported are macOS, Windows, Linux
+--> The browsers supported are Chrome, Firefox, Internet Explorer and Safari
+
+- Each one of the browsers have their own drivers which are maintained by a different browser vendor (own API for each).
+  The key idea behind these drivers is that they are written in a language most natural to use for each browser.
+
+Setting up WebDriver
+2 tools to install before writing tests
+
+1. Selenium WebDriver as the framework
+2. ChromeDriver as the browser driver to run tests in Chrome (there is also geckdriver to run tests in Firefox)
+
+--> Navigate to Selenium website (selenium.dev/downloads)
+--> Scroll to and find the "Selenium Client & WebDriver Language Bindings" section
+--> Click "download" of Ruby which will navigate you to Selenium-WebDriver Ruby Gems page
+
+- Note that Gems in Ruby are independent Ruby software packages (you can think of them as library or plugin)
+- RubyGems is the package management framework
+- Each Gem needs to be installed before using it
+
+2 ways to install RubyGems:
+
+1. $ gem install (included in Ruby by default) - install gems from command line, quick and easy. It's able to search for packages available and install the specified software packages and their dependencies.
+2. $ bundle install - When gems are installed with the help of their bundler, gems are defined in what's called a GemFile. Then, use bundler to install gems. This is beneficial so that any other individual or system that builds and runs the application will be able to install all the same versions of the gem easily - it is necessary for shared projects.
+
+- This project uses the 2nd way from above which is to use the bundle install.
+
+So copy the GenFile command from the webpage and put it in the GemFile in the project source.
+
+It is important to note that placing the gem in the GemFile doesn't actually install them. To install the manage gem dependencies in this file, we must use the bundler.
+To use the bundler, need to first install it in the project directory (do $pwd to verify) and in terminal:
+
+--> $ gem install bundler which will give the latest bundler.
+--> After that succeeds, type $ bundle install (and this will go ahead and install your Selenium WebDriver gem).
+--> Finally, ensure that you have a browser driver setup (ChromeDriver for this project): $ gem install selenium-webdriver -v 3.142.7 and then $ brew install chromedriver
+
+Using the API:
+Ruby API Documentation for using the Selenium WebDriver: https://www.rubydoc.info/gems/selenium-webdriver/0.0.28/Selenium/WebDriver/Driver - has all the classes and methods available to perform actions on the browser
