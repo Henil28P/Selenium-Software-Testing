@@ -67,4 +67,4 @@ To use the bundler, need to first install it in the project directory (do $pwd t
 --> Finally, ensure that you have a browser driver setup (ChromeDriver for this project): $ gem install selenium-webdriver -v 3.142.7 and then $ brew install chromedriver
 
 Using the API:
-Ruby API Documentation for using the Selenium WebDriver: https://www.rubydoc.info/gems/selenium-webdriver/0.0.28/Selenium/WebDriver/Driver - has all the classes and methods available to perform actions on the browser
+Ruby API Documentation for using the Selenium WebDriver: https://www.rubydoc.info/gems/selenium-webdriver/0.0.28/Selenium/WebDriver/Driver - has all the classes and methods available to perform actions on the browser.
