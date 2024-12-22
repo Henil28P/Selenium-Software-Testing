@@ -68,3 +68,9 @@ To use the bundler, need to first install it in the project directory (do $pwd t
 
 Using the API:
 Ruby API Documentation for using the Selenium WebDriver: https://www.rubydoc.info/gems/selenium-webdriver/0.0.28/Selenium/WebDriver/Driver - has all the classes and methods available to perform actions on the browser.
+
+Breaking down the testing process into 3 steps:
+
+1. Decide what features to automate - requires knowledge of application under test and all of the available functionality.
+2. Outline test scenarios that will be automated and the steps of each test - think about inputs/outputs, determine the value of each scenario.
+3. Find the elements needed for the test - need to locate all elements used in tests upfront.
