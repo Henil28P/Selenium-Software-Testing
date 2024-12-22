@@ -74,3 +74,19 @@ Breaking down the testing process into 3 steps:
 1. Decide what features to automate - requires knowledge of application under test and all of the available functionality.
 2. Outline test scenarios that will be automated and the steps of each test - think about inputs/outputs, determine the value of each scenario.
 3. Find the elements needed for the test - need to locate all elements used in tests upfront.
+
+# EXAMPLE WORKFLOW: Sign-up workflow of the Selenium Blog Web App for this project
+
+Behavior of sign-up test to be automated:
+
+--> A user needs to navigate to the sign-up form
+--> Then, the user needs to fill out their username, email and create a password
+--> The user can then submit the form and users are successfully signed up
+
+Process of automating, filling out and submitting the form
+
+1. Find all 4 locators of all web elements to be used in this test (username, email, password, and Sign Up button)
+
+--> Can do the above by "inspecting" elements in the webpage (right-click on any element such as username field and select the "Inspect Element" option from the menu).
+
+It will show the type of element, and also show all locators such as the field's id, class, placeholder, name.
