@@ -1,4 +1,5 @@
 require "selenium-webdriver" # introduce the driver to use the WebDriver API library
+require "rspec"
 
 # TEST: Sign up for blog
 # Step 1: Use the above driver
@@ -22,6 +23,12 @@ password_field.send_keys("password")
 
 submit_button = driver.find_element(id: "submit")
 submit_button.click
+
+# Choose the expectation that the user's account was created successfully after form submission
+# --> Get the message from the 'banner' element which confirms that the user is signed up
+banner = driver.find_element(id: "flash_success")
+banner_text = banner.text # to grab the text from the banner element
+expect(banner_text).to eq("Welcome to the alpha blog user") # to expect the actual banner text equals the expected banner text
 
 # Step 3: close out the driver session
 driver.quit
