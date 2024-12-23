@@ -107,3 +107,14 @@ The Ruby library of RSpec will be used in this project which is a Behaviour-driv
 
 * Open the terminal and navigate to project directory
 * Then, type `$ rspec signup-test.rb` - tells the test runner (rspec-core) to run each 'it' block within the test file.
+
+* Information about the drivers:
+
+- All drivers need to be downloaded and put into the system's path (`$ export PATH=$PATH:/path/to/driver_name`) before being used.
+- API functionality are same between all drivers
+- Some drivers are faster than others in speed and might differ slightly in syntax or functionality as they are all managed by different organisations.
+
+1. ChromeDriver - maintained by Google and is a standalone server which implements the WebDriver wire protocol for Chromium. It's available on Chrome for Android and Desktop.
+2. geckodriver - owned by Mozilla and written in Rust (Mozilla's open-source programming language).
+3. EdgeDriver - maintained by Microsoft and written in C# and supports all language bindings.
+4. SafariDriver - maintained by web developer experience team at Apple. It is built with WebKit (an open-source web browser and application engine).
