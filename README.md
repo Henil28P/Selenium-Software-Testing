@@ -147,3 +147,20 @@ Selenium Grid Benefits:
 - Managed multiple connections
 
 The grid requires set up and maintenance of the hub and nodes.
+
+# Setting up the hub
+
+- Use of Selenium standalone server is required (Selenium grid support comes built into the Selenium standalone server)
+- Download the latest Selenium standalone server at: https://www.selenium.dev/downloads
+- Then, scroll to "Selenium Server (Grid)" section and click the latest stable version to download (4.27.0)
+- Once downloaded, use the Selenium standalone server to start the hub on your local machine by the following commands:
+
+1. `$ cd ~/Downloads`
+2. `$ java -jar selenium-server-4.27.0.jar hub` - to start the hub in the grid
+
+# Configuring nodes
+
+- Follow the steps in your terminal to start the node in the hub:
+
+1. `$ cd ~/Downloads`
+2. `$ java -jar selenium-server-4.27.0.jar node --hub http://<hub_ip_generated_from_earlier_command_when_starting_hub>:<port>`
