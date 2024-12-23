@@ -118,3 +118,32 @@ The Ruby library of RSpec will be used in this project which is a Behaviour-driv
 2. geckodriver - owned by Mozilla and written in Rust (Mozilla's open-source programming language).
 3. EdgeDriver - maintained by Microsoft and written in C# and supports all language bindings.
 4. SafariDriver - maintained by web developer experience team at Apple. It is built with WebKit (an open-source web browser and application engine).
+
+# Selenium Grid
+
+- It's a proxy server to run tests against remote browser instances
+- It distributes the load of testing across several servers
+- It allows for multiple configurations of test to be run across different browsers, platforms and devices - all at the same time.
+
+2 main components to the grid:
+
+1. Hub - central server for the grid. It is the point where tests are executed.
+
+- The hub is launched on a single machine and connects to 1 or more nodes that are registered to it. There can only be 1 hub in a grid instance (can be a Windows, macOS, or Linux platform).
+
+2. Node - servers that are registered to a hub. Nodes receive test scripts from the hub and run them.
+
+- Nodes don't have to be the same platform as the hub and can be a mix and match of different platforms. Nodes have different Selenium instances installed on them as well as the browsers that will be used for testing. There are usually many nodes registered to 1 hub in a grid instance.
+
+Hub and Node Relationship:
+
+- Once a test is executed on the hub, the hub searches through its list of registered servers one-by-one trying to find an available node matching the criteria provided.
+- If a match node is found, the hub sends test scripts to that node.
+
+Selenium Grid Benefits:
+
+- Smart routing between hub and nodes
+- Allows multiple tests to be run concurrently
+- Managed multiple connections
+
+The grid requires set up and maintenance of the hub and nodes.
