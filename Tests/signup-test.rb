@@ -8,8 +8,15 @@ describe "Blog application" do
     describe "Sign up to the blog application" do
         # it block to describe the purpose of this test which is to confirm that a new user has signed up successfully
         it "confirm that a user can successfully sign up" do
+
+            # Create unique usernames to avoid error of locating same element - change email, username, password fields and also modify expected value for username in the banner
+            # --> Create a timestamp variable and assign it to the end of those fields, then append it to the end of the username, email and expected banner text fields
+            timestamp = Time.now.to_i
+            # Value of the timestamp variable represents the epic (number of seconds elapsed since Jan 1st 1970) and append this to the username, email, expected banner text fields
+
             # Step 1: Use the above driver
             driver = Selenium::WebDriver.for :chrome # set up a new instance of thee chrome driver (instead of the browser name, it can be the version, or screen resolution)
+
             driver.navigate.to "https://selenium-blog.herokuapp.com/signup" # the driver navigates to the webpage link of the Heroku app passed to it
 
             # Step 2: after creating a driver, it's necessary to search for elements in the webpage before interacting with them and performing actions
@@ -19,10 +26,10 @@ describe "Blog application" do
             # 2. Drive actions on the above elements found - send keys to the username, email and password fields and finally finish by clicking the 'submit' button
 
             username_field = driver.find_element(id: "user_username")
-            username_field.send_keys("user")
+            username_field.send_keys("user #{timestamp}")
 
             email_field = driver.find_element(id: "user_email")
-            email_field.send_keys("email@test.com")
+            email_field.send_keys("user#{timestamp}@test.com")
 
             password_field = driver.find_element(id: "user_password")
             password_field.send_keys("password")
@@ -34,7 +41,7 @@ describe "Blog application" do
             # --> Get the message from the 'banner' element which confirms that the user is signed up
             banner = driver.find_element(id: "flash_success")
             banner_text = banner.text # to grab the text from the banner element
-            expect(banner_text).to eq("Welcome to the alpha blog user") # to expect the actual banner text equals the expected banner text
+            expect(banner_text).to eq("Welcome to the alpha blog user #{timestamp}") # to expect the actual banner text equals the expected banner text
 
             # Step 3: close out the driver session
             driver.quit
