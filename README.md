@@ -101,4 +101,4 @@ The Ruby library of RSpec will be used in this project which is a Behaviour-driv
    --> To use RSpec, it first needs to be installed as a 'gem' (go to Ruby gems site for rspec: https://rubygems.org/gems/rspec/versions/3.7.0): copy the gem command to add to the GemFile
    --> After adding the gem command to the GemFile, type $ bundle install - in the project directory path
 
---> Use the rspec-core library - it provides a BDD format for test classes, as well as a test runner to execute test and provide nicely formatted output
+--> Use the rspec-core library - it provides a BDD format for test classes, as well as a test runner to execute test and provide nicely formatted output.
