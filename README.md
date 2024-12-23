@@ -102,3 +102,8 @@ The Ruby library of RSpec will be used in this project which is a Behaviour-driv
    --> After adding the gem command to the GemFile, type $ bundle install - in the project directory path
 
 --> Use the rspec-core library - it provides a BDD format for test classes, as well as a test runner to execute test and provide nicely formatted output.
+
+- Executing the test
+
+* Open the terminal and navigate to project directory
+* Then, type `$ rspec signup-test.rb` - tells the test runner (rspec-core) to run each 'it' block within the test file.
