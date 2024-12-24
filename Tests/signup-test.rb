@@ -1,6 +1,7 @@
 require "selenium-webdriver" # introduce the driver to use the WebDriver API library
 require "rspec"
 require_relative "signup_page.rb" # to use the signup page object in this test
+require_relative "users_page.rb"
 
 # Create unique usernames to avoid error of locating same element - change email, username, password fields and also modify expected value for username in the banner
 # --> Create a timestamp variable and assign it to the end of those fields, then append it to the end of the username, email and expected banner text fields
@@ -42,7 +43,8 @@ describe "Blog application" do
 
             # Choose the expectation that the user's account was created successfully after form submission
             # --> Get the message from the 'banner' element which confirms that the user is signed up
-            banner_text = get_banner_text()
+            users = UsersPage.new(@driver) # allows to call methods on page object directly
+            banner_text = users.get_banner_text()
             expect(banner_text).to eq(expected_banner_text) # to expect the actual banner text equals the expected banner text
 
             # Step 3: close out the driver session
