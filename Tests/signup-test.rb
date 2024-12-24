@@ -1,5 +1,6 @@
 require "selenium-webdriver" # introduce the driver to use the WebDriver API library
 require "rspec"
+require_relative "signup_page.rb" # to use the signup page object in this test
 
 # Create unique usernames to avoid error of locating same element - change email, username, password fields and also modify expected value for username in the banner
 # --> Create a timestamp variable and assign it to the end of those fields, then append it to the end of the username, email and expected banner text fields
@@ -35,6 +36,9 @@ describe "Blog application" do
             @driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome  # set up a new instance of the remote web driver (instead of the browser name, it can be the version, or screen resolution)
 
             @driver.navigate.to "https://selenium-blog.herokuapp.com/signup" # the driver navigates to the webpage link of the Heroku app passed to it
+
+            # declare 'signup' variable to use the signup page object
+            signup = SignupPage.new(@driver)
 
             enter_username(username)
             enter_email(email)
