@@ -194,3 +194,11 @@ Selenium grid solves the problems of being able to run tests across many platfor
 - For better maintenance: enable warnings and logs for easy debugging, create scripts to manage grid (such as starting and stopping hubs and nodes).
 - Performance - tests running can start to degrade over time
 - For better performance: explicitly kill browser after tests, restart nodes periodically and restart server after several test runs or on a nightly basis.
+
+# Writing effective tests
+
+1. Clean Test Code
+
+- Readable tests
+- Minimise lines of codes per test class and not repeat steps over and over
+- Reusable steps (variables and methods)
