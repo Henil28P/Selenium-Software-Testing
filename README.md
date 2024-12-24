@@ -177,3 +177,20 @@ What to consider next:
 
 1. Physical Servers: Using physical servers can be good if there are machines readily available or can be set up and configured easily. Physical servers should only be dedicated for testing.
 2. Virtual Servers: Services like Amazon EC2 are great at being able to easily spin up and manage virtual servers.
+
+# Pros and Cons of Selenium grid
+
+Selenium grid solves the problems of being able to run tests across many platforms and browsers in a nice delegated distribution.
+
+1. Pros
+
+- Scales well by distributing tests on several machines, running tests in parallel.
+- It is a central way to manage multiple environments making it easy to run the test against a large combination of browsers and OS's.
+- Grid is smart by being able to find specified nodes quickly and easily and routes tests scripts to the correct node.
+
+2. Cons
+
+- Maintainability is required to keep the hub and nodes running smoothly.
+- For better maintenance: enable warnings and logs for easy debugging, create scripts to manage grid (such as starting and stopping hubs and nodes).
+- Performance - tests running can start to degrade over time
+- For better performance: explicitly kill browser after tests, restart nodes periodically and restart server after several test runs or on a nightly basis.
