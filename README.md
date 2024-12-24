@@ -170,3 +170,10 @@ The grid requires set up and maintenance of the hub and nodes.
 Change the signup-test.rb file by using the remote driver
 `driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome`
 where desired_capabilities define the browser name, or its version, screen resolution, etc.
+
+What to consider next:
+
+- Where and how to maintain infrastructure moving forward (realistically, when using the grid, it is hosted either on physical or virtual servers dedicated to this 1 purpose).
+
+1. Physical Servers: Using physical servers can be good if there are machines readily available or can be set up and configured easily. Physical servers should only be dedicated for testing.
+2. Virtual Servers: Services like Amazon EC2 are great at being able to easily spin up and manage virtual servers.
