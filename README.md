@@ -202,3 +202,13 @@ Selenium grid solves the problems of being able to run tests across many platfor
 - Readable tests
 - Minimise lines of codes per test class and not repeat steps over and over
 - Reusable steps (variables and methods)
+
+Page Object Pattern - design pattern for Selenium tests
+Idea: A class for each page in the app to model its behaviour
+Each page class has:
+
+- Test Selectors
+- Test Methods
+
+In a test, a new page object can be created and that object can then call that class's methods directly.
+Goals of Page Object model - separation of test and code and more maintainable test code by being able to go directly to the page object class and update things there.
