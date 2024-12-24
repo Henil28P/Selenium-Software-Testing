@@ -40,10 +40,11 @@ describe "Blog application" do
             # declare 'signup' variable to use the signup page object
             signup = SignupPage.new(@driver)
 
-            enter_username(username)
-            enter_email(email)
-            enter_password(password)
-            submit_form()
+            # Use the 'signup' page object on the methods of the page
+            signup.enter_username(username)
+            signup.enter_email(email)
+            signup.enter_password(password)
+            signup.submit_form()
 
             # Choose the expectation that the user's account was created successfully after form submission
             # --> Get the message from the 'banner' element which confirms that the user is signed up
