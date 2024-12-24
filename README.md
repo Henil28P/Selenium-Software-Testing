@@ -222,3 +222,36 @@ Best practices to follow to keep tests organised:
 1. Each test class focuses on 1 area of the application - allows for easy navigation and the ability to find specific tests quickly and helps to keep test classes shorter and more concise.
 2. Group tests by feature - have sub-suites based on feature (allows for total separation of concerns and allows for more flexibility with running multiple suites of tests).
 3. Document tests - README, outlines details about tests, helps those unfamiliar with tests.
+
+- The Test Pyramid
+
+* It's the ideal way to structure tests
+* Different levels of testing
+* It's a visual representation intended to guide the coverage of tests that should exist at various levels within the application.
+
+It consists of 3 layers:
+
+1. Unit (bottom):
+
+- Hit the server, verify a result and test a single function.
+- They run in seconds
+- There should always be most unit tests
+
+2. Integration (middle) - service-level tests:
+
+- Involve testing multiple services and how they work together
+- Create their own data and are a bit slower
+- They run in the range of tens of seconds
+- There should be a decent amount of integration-level tests
+
+3. UI (top):
+
+- This is where Selenium tests belong
+- End-to-end user workflows are tested and mimic user actions
+- Run through the browser and are the slowest tests (minutes to run)
+- Most volatile
+
+Takeaway:
+
+- Selenium UI tests are valuable, but remember to consider other types of testing.
+- Avoid having a test suite full of Selenium tests.
