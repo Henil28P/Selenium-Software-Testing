@@ -164,3 +164,9 @@ The grid requires set up and maintenance of the hub and nodes.
 
 1. `$ cd ~/Downloads`
 2. `$ java -jar selenium-server-4.27.0.jar node --hub http://<hub_ip_generated_from_earlier_command_when_starting_hub>:<port>`
+
+# Running tests after setting up hub and configuring nodes
+
+Change the signup-test.rb file by using the remote driver
+`driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome`
+where desired_capabilities define the browser name, or its version, screen resolution, etc.

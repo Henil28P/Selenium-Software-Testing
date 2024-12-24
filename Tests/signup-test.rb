@@ -15,7 +15,7 @@ describe "Blog application" do
             # Value of the timestamp variable represents the epic (number of seconds elapsed since Jan 1st 1970) and append this to the username, email, expected banner text fields
 
             # Step 1: Use the above driver
-            driver = Selenium::WebDriver.for :chrome # set up a new instance of thee chrome driver (instead of the browser name, it can be the version, or screen resolution)
+            driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome  # set up a new instance of the remote web driver (instead of the browser name, it can be the version, or screen resolution)
 
             driver.navigate.to "https://selenium-blog.herokuapp.com/signup" # the driver navigates to the webpage link of the Heroku app passed to it
 
