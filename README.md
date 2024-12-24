@@ -212,3 +212,13 @@ Each page class has:
 
 In a test, a new page object can be created and that object can then call that class's methods directly.
 Goals of Page Object model - separation of test and code and more maintainable test code by being able to go directly to the page object class and update things there.
+
+# Test Organisation
+
+- Important to think about as Selenium test suites grow and scale.
+
+Best practices to follow to keep tests organised:
+
+1. Each test class focuses on 1 area of the application - allows for easy navigation and the ability to find specific tests quickly and helps to keep test classes shorter and more concise.
+2. Group tests by feature - have sub-suites based on feature (allows for total separation of concerns and allows for more flexibility with running multiple suites of tests).
+3. Document tests - README, outlines details about tests, helps those unfamiliar with tests.
