@@ -18,12 +18,6 @@ expected_banner_text = "Welcome to the alpha blog user #{timestamp}"
 # Use the "id" locator to find the element on the web page
 # 2. Drive actions on the above elements found - send keys to the username, email and password fields and finally finish by clicking the 'submit' button
 
-def get_banner_text()
-    # this will return a text value
-    banner = driver.find_element(id: "flash_success")
-    banner_text = banner.text # to grab the text from the banner element
-end
-
 # TEST: Sign up for blog
 # To use rspec-core, add a 'describe' block which describes what the test is doing (describing a blog application for this project)
 describe "Blog application" do
